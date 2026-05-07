@@ -32,7 +32,34 @@ namespace Catalogo.Controllers {
                 Ano = 2017,
                 Consola = "PlayStation 4",
                 Descripcion = "Historia de androides en guerra contra máquinas"
-            }
+            },
+
+            new Item {
+                Id = 4,
+                Titulo = "Silent Hill",
+                Genero = "Terror Psicológico / Survival Horror",
+                Ano = 1999,
+                Consola = "PlayStation",
+                Descripcion = "Videojuego de terror psicológico donde Harry Mason explora el misterioso pueblo de Silent Hill en busca de su hija desaparecida. Destaca por su atmósfera oscura, niebla intensa y narrativa inquietante."
+            },
+
+            new Item {
+                Id = 5,
+                Titulo = "Castlevania: Order of Ecclesia",
+                Genero = "Acción / Plataforma / Metroidvania",
+                Ano = 2008,
+                Consola = "Nintendo DS",
+                Descripcion = "Juego de acción donde Shanoa utiliza poderosos Glyphs para enfrentar monstruos y detener el regreso de Drácula. Es reconocido por su dificultad y ambientación gótica."
+             },
+
+            new Item {
+                Id = 6,
+                Titulo = "Dante's Inferno",
+                Genero = "Acción / Hack and Slash",
+                Ano = 2010,
+                Consola = "PlayStation 3 / Xbox 360",
+                Descripcion = "Videojuego inspirado en La Divina Comedia de Dante Alighieri. El jugador desciende por los nueve círculos del infierno enfrentando criaturas demoníacas para rescatar a Beatrice."
+            },
         };
 
     // Lista - con filtro opcional por genero
