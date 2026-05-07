@@ -1,37 +1,175 @@
 ﻿@model Catalogo.Models.Item
 
-<h1>Agregar videojuego</h1>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        min-height: 100vh;
+        color: white;
+    }
 
-<form asp-action="Agregar" method="post">
-    <div>
-        <label>Título</label>
-        <input asp-for="Titulo" />
+    .form-gamer {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 25px;
+        padding: 35px;
+        box-shadow: 0 0 25px rgba(0,255,247,0.25);
+        animation: aparecer 0.6s ease;
+    }
+
+    @@keyframes aparecer {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .titulo-form {
+        color: #00fff7;
+        font-weight: bold;
+        text-shadow: 0 0 12px #00fff7;
+    }
+
+    .form-label {
+        color: #ff4df0;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .form-control {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white;
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+        .form-control:focus {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            border-color: #00fff7;
+            box-shadow: 0 0 15px #00fff7;
+        }
+
+    textarea.form-control {
+        min-height: 120px;
+        resize: none;
+    }
+
+    .btn-gamer {
+        background: linear-gradient(45deg, #ff00cc, #3333ff);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+        .btn-gamer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff00cc;
+            color: white;
+        }
+
+    .btn-cancel {
+        border: 1px solid #00fff7;
+        color: #00fff7;
+        padding: 12px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .btn-cancel:hover {
+            background: #00fff7;
+            color: black;
+            box-shadow: 0 0 15px #00fff7;
+        }
+</style>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="form-gamer">
+
+                <h1 class="mb-4 titulo-form">
+                    🎮 Agregar Videojuego
+                </h1>
+
+                <form asp-action="Agregar" method="post">
+
+                    <div class="mb-4">
+                        <label asp-for="Titulo" class="form-label">
+                            🎯 Título
+                        </label>
+
+                        <input asp-for="Titulo" class="form-control" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Genero" class="form-label">
+                            🔥 Género
+                        </label>
+
+                        <input asp-for="Genero" class="form-control" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Consola" class="form-label">
+                            🕹 Consola
+                        </label>
+
+                        <input asp-for="Consola" class="form-control" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Ano" class="form-label">
+                            📅 Año
+                        </label>
+
+                        <input asp-for="Ano"
+                               type="number"
+                               class="form-control" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Descripcion" class="form-label">
+                            📖 Descripción
+                        </label>
+
+                        <textarea asp-for="Descripcion"
+                                  class="form-control"></textarea>
+                    </div>
+
+                    <div class="d-flex gap-3">
+
+                        <button type="submit"
+                                class="btn btn-gamer">
+                            💾 Guardar
+                        </button>
+
+                        <a asp-action="Index"
+                               class="btn-cancel">
+                            ⬅ Cancelar
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div>
-        <label>Genero</label>
-        <input asp-for="Genero" />
-    </div>
-
-    <!-- Continúa en la siguiente -->
-
-    <div>
-        <label>Consola</label>
-        <input asp-for="Consola" />
-    </div>
-
-    <div>
-        <label>Año</label>
-        <input asp-for="Ano" type="number" />
-    </div>
-
-    <div>
-        <label>Descripción</label>
-        <textarea asp-for="Descripcion"></textarea>
-    </div>
-
-    <button type="submit">Guardar</button>
-</form>
-
-<hr />
-<a asp-action="Index">&larr; Cancelar</a>
+</div>
