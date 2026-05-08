@@ -1,8 +1,89 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+  
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        min-height: 100vh;
+        color: white;
+        overflow: hidden;
+    }
+
+    .inicio-container {
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titulo-gamer {
+        font-size: 5rem;
+        font-weight: bold;
+        color: #00fff7;
+        text-shadow:
+            0 0 10px #00fff7,
+            0 0 25px #00fff7;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+        color: #d1d1d1;
+        margin-top: 15px;
+        margin-bottom: 40px;
+    }
+
+    .btn-gamer {
+        background: linear-gradient(45deg, #ff00cc, #3333ff);
+        border: none;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(255,0,204,0.5);
+    }
+
+    .btn-gamer:hover {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 20px #ff00cc,
+            0 0 40px #3333ff;
+
+        color: white;
+    }
+
+    .texto-mini {
+        margin-top: 20px;
+        color: #a5a5a5;
+    }
+</style>
+
+<div class="inicio-container">
+
+    <h1 class="titulo-gamer">
+        🎮 GamerVerse
+    </h1>
+
+    <p class="subtitulo">
+        Bienvenido a tu catálogo gamer
+    </p>
+
+    <a asp-controller="Catalogo"
+       asp-action="Index"
+       class="btn-gamer">
+
+        🚀 Entrar al Catálogo
+
+    </a>
+
+    <p class="texto-mini">
+        Explora y administra tus videojuegos favoritos
+    </p>
+
 </div>
