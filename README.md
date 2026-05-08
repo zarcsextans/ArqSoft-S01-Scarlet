@@ -19,7 +19,7 @@ El objetivo principal del proyecto es aplicar conceptos básicos de desarrollo w
 
 ---
 
-# 🛠 Tecnologías Utilizadas
+#  Tecnologías Utilizadas
 
 - ASP.NET Core MVC
 - Razor Views (.cshtml)
