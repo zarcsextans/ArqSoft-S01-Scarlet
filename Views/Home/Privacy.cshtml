@@ -1,6 +1,108 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacidad";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        min-height: 100vh;
+        color: white;
+    }
+
+    .privacy-container {
+        max-width: 900px;
+        margin: 60px auto;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 0 25px rgba(0,255,247,0.25);
+        animation: aparecer 0.6s ease;
+    }
+
+    @@keyframes aparecer {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .titulo-privacy {
+        color: #00fff7;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 0 0 15px #00fff7;
+        margin-bottom: 25px;
+    }
+
+    .texto-privacy {
+        color: #d1d1d1;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .btn-gamer {
+        background: linear-gradient(45deg, #ff00cc, #3333ff);
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+        .btn-gamer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 18px #ff00cc;
+            color: white;
+        }
+</style>
+
+<div class="privacy-container">
+
+    <h1 class="titulo-privacy">
+        🔒 Política de Privacidad
+    </h1>
+
+    <p class="texto-privacy">
+        GamerVerse es un proyecto académico desarrollado con ASP.NET Core MVC.
+        La aplicación permite administrar un catálogo de videojuegos mediante
+        una interfaz moderna con temática gamer.
+    </p>
+
+    <p class="texto-privacy">
+        Este sitio no recopila información personal de los usuarios ni comparte
+        datos con terceros. Toda la información utilizada dentro del sistema
+        tiene fines educativos y de demostración.
+    </p>
+
+    <p class="texto-privacy">
+        El proyecto fue diseñado para practicar conceptos relacionados con:
+    </p>
+
+    <ul class="texto-privacy">
+        <li>🎮 Arquitectura MVC</li>
+        <li>💻 Desarrollo web con ASP.NET Core</li>
+        <li>🎨 Diseño visual moderno</li>
+        <li>🗂 Manejo de modelos y vistas</li>
+        <li>⚡ Navegación dinámica</li>
+    </ul>
+
+    <a asp-controller="Home"
+           asp-action="Index"
+           class="btn-gamer">
+
+        ⬅ Volver al Inicio
+
+    </a>
+
+</div>
