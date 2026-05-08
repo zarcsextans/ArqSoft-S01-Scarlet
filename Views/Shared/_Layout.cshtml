@@ -1,51 +1,209 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - catalogo</title>
+
+    <title>@ViewData["Title"] - GamerVerse</title>
+
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/catalogo.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/catalogo.styles.css"
+          asp-append-version="true" />
+
+    <style>
+
+            body {
+                background: radial-gradient(circle at top left, #1b0033, transparent 30%), radial-gradient(circle at bottom right, #001f3f, transparent 30%), linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+                min-height: 100vh;
+                color: white;
+            }
+
+            /* NAVBAR */
+            .navbar-gamer {
+                background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+                box-shadow: 0 0 20px rgba(0,255,247,0.25);
+            }
+
+            .navbar-brand {
+                color: #00fff7 !important;
+                font-weight: bold;
+                font-size: 1.5rem;
+                text-shadow: 0 0 10px #00fff7;
+            }
+
+            .nav-link {
+                color: white !important;
+                font-weight: 500;
+                transition: 0.3s;
+                border-radius: 10px;
+                padding: 8px 14px !important;
+            }
+
+                .nav-link:hover {
+                    color: #00fff7 !important;
+                    background: rgba(255,255,255,0.08);
+                    text-shadow: 0 0 10px #00fff7;
+                    transform: translateY(-2px);
+                }
+
+            /* CONTENIDO */
+            main {
+                animation: aparecer 0.5s ease;
+            }
+
+            @@keyframes aparecer {
+                from {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* FOOTER */
+            .footer-gamer {
+                border-top: 1px solid rgba(255,255,255,0.1);
+                color: #cfcfcf;
+                text-align: center;
+                padding: 15px;
+                margin-top: 40px;
+                background: rgba(255,255,255,0.03);
+            }
+
+    </style>
+
 </head>
+
 <body>
+
+    <!-- NAVBAR -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-gamer">
+
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">catalogo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+                <a class="navbar-brand"
+                       asp-area=""
+                       asp-controller="Home"
+                       asp-action="Index">
+
+                    🎮 GamerVerse
+
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarContenido">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse"
+                     id="navbarContenido">
+
+                    <ul class="navbar-nav ms-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                            <a class="nav-link"
+                                   asp-area=""
+                                   asp-controller="Home"
+                                   asp-action="Index">
+
+                                🏠 Inicio
+
+                            </a>
+
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                            <a class="nav-link"
+                                   asp-controller="Catalogo"
+                                   asp-action="Index">
+
+                                🎮 Catálogo
+
+                            </a>
+
                         </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                                   asp-controller="Catalogo"
+                                   asp-action="Agregar">
+
+                                ➕ Agregar Juego
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Privacy">
+
+                                🔒 Privacidad
+
+                            </a>
+
+                        </li>
+
                     </ul>
-                    <partial name="_LoginPartial" />
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
+
+    <!-- CONTENIDO -->
     <div class="container">
+
         <main role="main" class="pb-3">
+
             @RenderBody()
+
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - catalogo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <!-- FOOTER -->
+    <footer class="footer-gamer">
+
+        🎮 GamerVerse © 2026
+
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
